@@ -1,0 +1,21 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>登录页面</title>
+    <script type="text/javascript" src="/js/commons/jquery-3.3.1.js"></script>
+
+    <script type="text/javascript">
+        //登陆方法
+        function login(){
+			location.href="/user/login.wyq";
+        }
+    </script>
+</head>
+<body>
+        <div>
+            <input  type="text"/>
+            <input  type="password"/>
+            <button type="button"  onclick="login()">登录</button>
+        </div>
+</body>
+</html>

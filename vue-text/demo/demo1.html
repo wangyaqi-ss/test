@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="box">
+    姓名:<input type="text" v-model="userName"></br>
+    年龄:<input type="text" v-model="age"></br>
+    <input type="button" value="添加" v-on:click="addUser();">
+    <table border="1" cellpadding="0" cellspacing="0" width="300">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th></th>
+        </tr>
+        <tr v-for="user in userInfo">
+            <td>{{user.userName}}</td>
+            <td>{{user.age}}</td>
+        </tr>
+    </table>
+</div>
+<script>
+    new Vue({
+        el:"#box",
+        data:{
+            userInfo:[{userName:"啦啦啦",age:55},{userName:"嘟嘟嘟",age:66}]
+        },
+        methods:{
+            addUser:function () {
+                this.userInfo.push({userName:this.userName,age:this.age});
+                this.userName="";
+                this.age="";
+            }
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
